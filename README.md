@@ -1,11 +1,11 @@
 # QRUNAP2
 
-**Remember QNAP2. Edit a model. Run it in your browser.**
+A documented QNAP2 subset for queueing network simulation.
 
 An independent Rust reconstruction of a small, evidence-linked subset of the historical QNAP2 queueing-network language. English first, with a French learning guide and interface.
 
-- [Live playground](https://medialoco.github.io/QRUNAP2/)
-- [English learning guide](docs/guide.md) · [Guide français](docs/guide.fr.md)
+- [Simulation interface](https://medialoco.github.io/QRUNAP2/)
+- [English user guide](docs/guide.md) · [Guide français](docs/guide.fr.md)
 - [Compatibility](docs/compatibility.md) · [Sources](docs/sources.md) · [Language inventory](docs/language-inventory.md)
 - [Grammar](docs/grammar.md) · [Runtime semantics](docs/semantics.md)
 - [Original research plan](QRUNAP2_PLAN.md)

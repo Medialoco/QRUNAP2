@@ -1,8 +1,8 @@
-# Remembering QNAP2, learning QRUNAP2
+# QRUNAP2 user guide
 
 [Lire en français](guide.fr.md)
 
-You do not need to remember the syntax to start. Open the playground, click **Run this example**, then change one number and run it again. The model executes locally in your browser.
+Select an example, click **Run this example**, then edit the model to compare results. Simulation runs locally in your browser.
 
 ## 1. What problem does it solve?
 

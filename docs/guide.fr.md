@@ -1,8 +1,8 @@
-# Retrouver QNAP2, découvrir QRUNAP2
+# Guide d’utilisation de QRUNAP2
 
 [Read in English](guide.md)
 
-Vous pouvez commencer sans vous souvenir de la syntaxe. Dans l'atelier, cliquez sur **Exécuter cet exemple**, changez un nombre, puis relancez. Le modèle s'exécute localement dans votre navigateur. L'anglais est la langue par défaut ; le bouton FR donne accès à l'interface française.
+Sélectionnez un exemple, cliquez sur **Exécuter cet exemple**, puis modifiez le modèle pour comparer les résultats. La simulation s’exécute localement dans votre navigateur. Le bouton FR donne accès à l’interface française.
 
 ## 1. À quoi cela sert-il ?
 

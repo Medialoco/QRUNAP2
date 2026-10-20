@@ -79,7 +79,7 @@ for path in (ROOT / 'docs').glob('*.md'):
     french = path.stem.endswith('.fr')
     language = 'fr' if french else 'en'
     home = '../?lang=fr' if french else '../'
-    home_label = 'Ouvrir l’atelier' if french else 'Open the playground'
+    home_label = 'Ouvrir le simulateur' if french else 'Open the simulator'
     page = f'''<!doctype html><html lang="{language}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title} · QRUNAP2</title><link rel="stylesheet" href="../style.css"></head><body>
 <header><a class="brand" href="{home}">Q<span>RUN</span>AP2</a><nav><a href="{home}">{home_label} ↗</a><a href="https://github.com/Medialoco/QRUNAP2">GitHub ↗</a></nav></header>
 <main class="doc"><nav class="doc-nav" aria-label="Documentation"><a href="guide.html">English guide</a><a href="guide.fr.html">Guide français</a><a href="compatibility.html">Compatibility</a><a href="sources.html">Sources</a><a href="language-inventory.html">Inventory</a><a href="grammar.html">Grammar</a><a href="semantics.html">Semantics</a></nav>{markdown(source)}</main></body></html>'''
