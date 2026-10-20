@@ -3,6 +3,7 @@ let lang =
   new URLSearchParams(location.search).get("lang") === "fr" ? "fr" : "en";
 const text = {
   en: {
+    brandNote: "* ru as in Rust",
     guide: "User guide",
     eyebrow: "QNAP2 SUBSET",
     title: "Queueing network simulation",
@@ -98,6 +99,7 @@ const text = {
     timeout: "Time limit reached. Reduce TMAX and try again.",
   },
   fr: {
+    brandNote: "* ru comme Rust",
     guide: "Guide de prise en main",
     eyebrow: "SOUS-ENSEMBLE DE QNAP2",
     title: "Simulation de réseaux de files d’attente",
