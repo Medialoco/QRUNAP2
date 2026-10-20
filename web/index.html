@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Rediscover QNAP2 with a bilingual guide and a Rust interpreter running in your browser."
+    />
+    <title>QRUNAP2 — The queueing lab</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="./"
+        >Q<span>RUN</span>AP2<span class="version"> / 0.1</span></a
+      >
+      <nav aria-label="Main">
+        <a id="guide-link" href="docs/guide.html" data-i18n="guide"
+          >Learning guide</a
+        ><a href="https://github.com/Medialoco/QRUNAP2">GitHub ↗</a
+        ><button id="language" class="language" aria-label="Switch to French">
+          FR
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section class="intro">
+        <div>
+          <p class="eyebrow" data-i18n="eyebrow">
+            THE QUEUEING LAB · QNAP2 REVISITED
+          </p>
+          <h1 data-i18n="title">Old language.<br />Fresh experiments.</h1>
+          <p class="lead" data-i18n="lead">
+            Remember by doing. Follow a customer through a queue, change the
+            model, and see what happens.
+          </p>
+        </div>
+        <div class="intro-note">
+          <span class="dot"></span
+          ><strong data-i18n="local">Runs in your browser</strong>
+          <p data-i18n="localNote">
+            A Rust engine. No installation. Your model stays on your device.
+          </p>
+          <a href="docs/compatibility.html" data-i18n="subset"
+            >Explore the supported subset →</a
+          >
+        </div>
+      </section>
+      <section aria-labelledby="examples-title">
+        <div class="section-line">
+          <h2 id="examples-title" data-i18n="choose">
+            01 / Pick an experiment
+          </h2>
+          <span data-i18n="editable">Every example is editable</span>
+        </div>
+        <div id="examples" class="examples"></div>
+      </section>
+      <section class="workspace" aria-label="Model editor and results">
+        <div class="editor-panel">
+          <div class="panel-heading">
+            <h2 data-i18n="model">02 / Read & change the model</h2>
+            <span class="file-tag">model.qnp</span>
+          </div>
+          <p id="example-description" class="description"></p>
+          <p id="provenance" class="provenance"></p>
+          <label for="source" class="sr-only" data-i18n="sourceLabel"
+            >QNAP2 model source</label
+          ><textarea
+            id="source"
+            spellcheck="false"
+            autocapitalize="off"
+            aria-describedby="editor-help"
+          ></textarea>
+          <p id="editor-help" class="editor-help" data-i18n="editorHelp">
+            EXP(2) = mean duration 2 · CST(2) = fixed duration 2 · & starts a
+            comment
+          </p>
+          <div class="controls">
+            <label for="seed" data-i18n="seed">Seed</label
+            ><input
+              id="seed"
+              type="number"
+              min="1"
+              max="4294967295"
+              step="1"
+              value="42"
+            /><button id="run" class="primary" data-i18n="run">
+              Run model ↗</button
+            ><button id="stop" disabled data-i18n="stop">Stop</button>
+          </div>
+          <div class="secondary-controls">
+            <button id="reset" data-i18n="reset">Reset example</button
+            ><button id="download-source" data-i18n="downloadSource">
+              Download .qnp</button
+            ><label class="file-button" for="import" data-i18n="import"
+              >Open .qnp</label
+            ><input
+              id="import"
+              type="file"
+              accept=".qnp,.txt"
+              class="sr-only"
+            />
+          </div>
+        </div>
+        <div class="result-panel">
+          <div class="panel-heading">
+            <h2 data-i18n="results">03 / Understand the result</h2>
+            <button id="export" disabled data-i18n="export">Export JSON</button>
+          </div>
+          <p id="status" role="status" aria-live="polite"></p>
+          <pre id="error" role="alert" hidden></pre>
+          <div id="results" hidden>
+            <div id="metrics" class="metrics"></div>
+            <h3 data-i18n="population">Customers in the network</h3>
+            <div id="chart"></div>
+            <p class="small" data-i18n="chartNote">
+              201 samples across simulated time, including customers in service.
+            </p>
+            <div class="table-scroll">
+              <table>
+                <caption data-i18n="stationStats">
+                  Station measurements
+                </caption>
+                <thead>
+                  <tr>
+                    <th data-i18n="station">Station</th>
+                    <th data-i18n="busy">Utilization</th>
+                    <th>L</th>
+                    <th>Lq</th>
+                    <th>W</th>
+                    <th>Wq</th>
+                    <th data-i18n="throughput">Throughput</th>
+                  </tr>
+                </thead>
+                <tbody id="station-rows"></tbody>
+              </table>
+            </div>
+            <p class="small" data-i18n="definitions">
+              L: in station · Lq: waiting · W: station time · Wq: waiting time.
+              W and Wq include completed visits only. Source utilization is not
+              applicable.
+            </p>
+            <div class="insight">
+              <p class="eyebrow" data-i18n="readout">HOW TO READ THIS</p>
+              <p id="insight"></p>
+            </div>
+            <p class="small" data-i18n="caveat">
+              One run, including startup. No confidence intervals or warm-up
+              removal. Unfinished visits are excluded from W and Wq.
+            </p>
+          </div>
+          <div id="empty" class="empty">
+            <div class="queue-art" aria-hidden="true">
+              <i></i><i></i><i></i><span>→</span><b>▣</b><span>→</span>
+            </div>
+            <h3 data-i18n="emptyTitle">A little model. A useful question.</h3>
+            <p data-i18n="emptyText">
+              Run an example to see waiting times, utilization and the number of
+              customers in the network.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="learn">
+        <div>
+          <p class="eyebrow" data-i18n="refresher">A QUICK REFRESHER</p>
+          <h2 data-i18n="refresherTitle">
+            The names come back.<br />Then the intuition.
+          </h2>
+          <a id="bottom-guide" href="docs/guide.html" data-i18n="readGuide"
+            >Read the step-by-step guide →</a
+          >
+        </div>
+        <div class="concepts">
+          <article>
+            <strong>01 — <span data-i18n="customer">Customer</span></strong>
+            <p data-i18n="customerText">
+              The thing moving through the system: a request, a job or a person.
+            </p>
+          </article>
+          <article>
+            <strong>02 — <span data-i18n="station">Station</span></strong>
+            <p data-i18n="stationText">
+              A waiting queue and one or more servers that process its
+              customers.
+            </p>
+          </article>
+          <article>
+            <strong>03 — <span data-i18n="service">Service</span></strong>
+            <p data-i18n="serviceText">
+              Processing time at a server; the interval between arrivals at a
+              source.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span data-i18n="footer"
+        >An independent reconstruction. A small, documented subset of
+        QNAP2.</span
+      ><a href="docs/sources.html" data-i18n="sources"
+        >Sources & historical changes</a
+      ><a href="docs/compatibility.html" data-i18n="compatibility"
+        >Compatibility (EN)</a
+      >
+    </footer>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

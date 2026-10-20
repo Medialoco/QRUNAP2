@@ -1,0 +1,20 @@
+& QRUNAP2 original teaching model: constant durations; no waiting in this configuration.
+/DECLARE/
+QUEUE INPUT, DESK;
+/STATION/
+NAME=INPUT;
+TYPE=SOURCE;
+SERVICE=CST(2);
+TRANSIT=DESK;
+/STATION/
+NAME=DESK;
+TYPE=SERVER,SINGLE;
+SERVICE=CST(1);
+TRANSIT=OUT;
+/CONTROL/
+TMAX=20;
+/EXEC/
+BEGIN
+SIMUL;
+END;
+/END/
