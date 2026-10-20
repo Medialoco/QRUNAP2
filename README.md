@@ -1,10 +1,13 @@
 # QRUNAP2
 
+[![crates.io](https://img.shields.io/crates/v/qrunap2.svg)](https://crates.io/crates/qrunap2)
+
 A documented QNAP2 subset for queueing network simulation.
 
 An independent Rust reconstruction of a small, evidence-linked subset of the historical QNAP2 queueing-network language. English first, with a French learning guide and interface.
 
 - [Simulation interface](https://medialoco.github.io/QRUNAP2/)
+- [Rust package on crates.io](https://crates.io/crates/qrunap2) · [API documentation](https://docs.rs/qrunap2)
 - [English user guide](docs/guide.md) · [Guide français](docs/guide.fr.md)
 - [Compatibility](docs/compatibility.md) · [Sources](docs/sources.md) · [Language inventory](docs/language-inventory.md)
 - [Grammar](docs/grammar.md) · [Runtime semantics](docs/semantics.md)
