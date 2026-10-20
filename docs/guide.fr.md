@@ -89,7 +89,23 @@ Le démarrage est inclus dans les moyennes. Les visites inachevées à l'arrêt 
 
 Le dernier exemple reconstruit la topologie d'une véritable [exécution publiée par l'INRIA](https://www-sop.inria.fr/sloop/qnaprep/output.html). La saisie interactive et les réplications parallèles sont remplacées. Les [modifications sont documentées](sources.md) : ce n'est pas le programme original inchangé.
 
-## 6. Comment QNAP2 est-il adapté ?
+## 6. Le langage historique comporte trois niveaux
+
+Pour ouvrir un ancien fichier QNAP2, distinguez ces niveaux :
+
+| Niveau | Son rôle | Repères de lecture |
+| --- | --- | --- |
+| Description du réseau | Déclarer les objets et décrire les stations. | QUEUE, NAME, TYPE, SERVICE, TRANSIT |
+| Comportement algorithmique | Calculer et exprimer un comportement plus riche qu'une simple durée. | Variables, affectation, conditions, blocs, références de clients et synchronisation |
+| Pilotage de l'exécution | Préparer et lancer une expérience, dialoguer et demander des résultats. | /CONTROL/, /EXEC/, GET, PRINT, SIMUL |
+
+Dans le programme historique de l'INRIA, `=` introduit les propriétés des stations ou du contrôle, tandis que `:=` affecte une valeur dans les instructions exécutables. INTEGER et REAL déclarent des variables numériques ; BEGIN et END délimitent un bloc. GET lit une valeur et PRINT affiche des informations. Ce sont des repères de lecture, mais **les variables, affectations et instructions interactives ne sont pas encore prises en charge dans cet atelier**. Voir [S8](sources.md).
+
+Un SERVICE historique pouvait contenir un algorithme au lieu d'une durée. Une référence de client désigne un client particulier ; les drapeaux permettent de synchroniser des activités. Le programme de circulation urbaine illustre ce style plus riche ([S3](sources.md)). Remplacer ces mécanismes par des durées fixes changerait le modèle.
+
+Une simulation produit des observations à partir d'une succession d'événements. Une méthode analytique calcule des résultats par des équations sous certaines hypothèses. QNAP2 proposait les deux ; cette version de QRUNAP2 implémente uniquement la simulation. Une formule dans le guide est une référence pédagogique, pas un solveur historique implémenté.
+
+## 7. Comment QNAP2 est-il adapté ?
 
 Les noms historiques restent visibles : QUEUE, STATION, SERVICE, TRANSIT et SIMUL. Le code est réécrit en Rust. Le même moteur fonctionne en ligne de commande ou en WebAssembly dans une tâche de fond du navigateur. GitHub Pages héberge des fichiers statiques ; les visiteurs n'ont besoin ni de serveur de simulation ni de compte.
 
@@ -97,6 +113,6 @@ L'éditeur web, la graine, l'export JSON, les deux langues, les limites de resso
 
 Cette version traite de petits réseaux ouverts et fermés, avec durées constantes ou exponentielles et serveurs simples ou multiples. Variables, boucles, IF, références, drapeaux, classes de clients, routage probabiliste et solveurs analytiques historiques ne sont pas implémentés. Une construction non prise en charge produit une erreur. La [matrice de compatibilité en anglais](compatibility.md) précise les limites.
 
-## 7. Reprendre concrètement
+## 8. Reprendre concrètement
 
 Commencez par la première file, modifiez uniquement l'espacement des arrivées et observez l'occupation et l'attente. Ajoutez ensuite un deuxième serveur. Explorez enfin le réseau fermé et ralentissez B en augmentant sa durée moyenne de service. Expliquez le résultat avec vos propres mots avant de changer un autre paramètre : les idées centrales reviennent ainsi avant les algorithmes et synchronisations historiques.

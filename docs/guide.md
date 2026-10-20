@@ -89,7 +89,23 @@ These reports include the startup period. Visits unfinished at the horizon do no
 
 The last example is based on the topology of an actual [INRIA execution listing](https://www-sop.inria.fr/sloop/qnaprep/output.html). Its interactive input and parallel replications have been replaced; the [change record](sources.md) explains the adaptation. It is not an unchanged historical program.
 
-## 6. What has been adapted in QRUNAP2?
+## 6. The historical language has three layers
+
+Keep these layers separate when opening an old QNAP2 file:
+
+| Layer | Its role | Reading cues |
+| --- | --- | --- |
+| Network description | Declare objects and describe stations. | QUEUE, NAME, TYPE, SERVICE, TRANSIT |
+| Algorithmic behavior | Compute values and describe behavior beyond a simple service duration. | Variables, assignment, conditions, blocks, customer references and synchronization |
+| Execution controls | Prepare and launch an experiment, interact with the user and request results. | /CONTROL/, /EXEC/, GET, PRINT, SIMUL |
+
+In the historical INRIA listing, `=` introduces station/control properties while `:=` assigns a value inside executable instructions. INTEGER and REAL declare numeric variables; BEGIN and END delimit an instruction block. GET reads a value and PRINT displays information. These are useful reading cues, but **variable declarations, assignments and interactive instructions are not supported by this playground yet**. See [S8](sources.md).
+
+A historical SERVICE could contain an algorithm instead of just a duration. A customer reference identifies a particular customer; flags support synchronization between activities. The urban-flow program illustrates this richer style ([S3](sources.md)). Those mechanisms need their own semantics; replacing them with fixed delays would change the model.
+
+Simulation produces observations from generated event histories. An analytical method computes results from mathematical equations under particular assumptions. Historical QNAP2 offered both; this QRUNAP2 release implements simulation only. A mathematical formula shown in the guide is a teaching reference, not an implemented historical solver.
+
+## 7. What has been adapted in QRUNAP2?
 
 Historical spellings remain visible: QUEUE, STATION, SERVICE, TRANSIT and SIMUL. The implementation is new Rust code. That same core runs from the command line or as WebAssembly inside a browser worker. GitHub Pages serves static files; no simulation server or account is required for visitors.
 
@@ -97,6 +113,6 @@ The web editor, seed field, JSON export, English/French interface, resource limi
 
 This release handles small open and closed networks, constant/exponential durations and single/multiple servers. Variables, loops, IF, references, flags, customer classes, probabilistic routes and the historical analytical solvers are not implemented. Unsupported input produces an error. Consult the [compatibility matrix](compatibility.md) before pasting an old program.
 
-## 7. A practical way to resume
+## 8. A practical way to resume
 
 Start with the first queue, change only the arrival interval, and watch utilization and waiting. Then add a second server. Finally, explore the closed historical network and slow down B by increasing its service mean. Explain each result in ordinary words before changing another parameter. That is enough to recover the central modeling ideas before tackling historical algorithms and synchronization.
