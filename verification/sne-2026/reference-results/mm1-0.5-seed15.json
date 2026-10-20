@@ -1,0 +1,18 @@
+{
+  "initial": 0,
+  "generated": 99821,
+  "exited": 99820,
+  "remaining": 1,
+  "stations": [
+    {
+      "mean_number": 0.9878837406014778,
+      "mean_queue": 0.49072983262575226,
+      "utilization": 0.4971539079757255,
+      "throughput": 0.4991,
+      "mean_wait": 0.9832294783124668,
+      "mean_response": 1.9793288333929049,
+      "completed": 99820,
+      "remaining": 1
+    }
+  ]
+}

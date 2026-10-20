@@ -1,0 +1,23 @@
+& Reconstruction of the two-station topology in INRIA QNAPREP (1995).
+& Original: https://www-sop.inria.fr/sloop/qnaprep/output.html
+& Interactive input and parallel replications replaced by one seeded run.
+/DECLARE/
+QUEUE A, B;
+/STATION/
+NAME=A;
+TYPE=SERVER,SINGLE;
+INIT=40;
+SERVICE=EXP(1.0);
+TRANSIT=B;
+/STATION/
+NAME=B;
+TYPE=SERVER,SINGLE;
+SERVICE=EXP(1.0);
+TRANSIT=A;
+/CONTROL/
+TMAX=200000;
+/EXEC/
+BEGIN
+SIMUL;
+END;
+/END/

@@ -1,0 +1,282 @@
+[
+  {
+    "case": "dd1-light",
+    "qrunap2": {
+      "name": "DESK",
+      "source": false,
+      "capacity": 1,
+      "completed": 9,
+      "remaining": 1,
+      "mean_number": 0.45,
+      "mean_queue": 0.0,
+      "utilization": 0.45,
+      "throughput": 0.45,
+      "mean_wait": 0.0,
+      "mean_response": 1.0
+    },
+    "simpy": {
+      "initial": 0,
+      "generated": 10,
+      "exited": 9,
+      "remaining": 1,
+      "stations": [
+        {
+          "mean_number": 0.45,
+          "mean_queue": 0.0,
+          "utilization": 0.45,
+          "throughput": 0.45,
+          "mean_wait": 0.0,
+          "mean_response": 1.0,
+          "completed": 9,
+          "remaining": 1
+        }
+      ]
+    },
+    "pass": true
+  },
+  {
+    "case": "dd1-ties",
+    "qrunap2": {
+      "name": "DESK",
+      "source": false,
+      "capacity": 1,
+      "completed": 19,
+      "remaining": 1,
+      "mean_number": 0.95,
+      "mean_queue": 0.0,
+      "utilization": 0.95,
+      "throughput": 0.95,
+      "mean_wait": 0.0,
+      "mean_response": 1.0
+    },
+    "simpy": {
+      "initial": 0,
+      "generated": 20,
+      "exited": 19,
+      "remaining": 1,
+      "stations": [
+        {
+          "mean_number": 0.95,
+          "mean_queue": 0.0,
+          "utilization": 0.95,
+          "throughput": 0.95,
+          "mean_wait": 0.0,
+          "mean_response": 1.0,
+          "completed": 19,
+          "remaining": 1
+        }
+      ]
+    },
+    "pass": true
+  },
+  {
+    "case": "dd1-overload",
+    "qrunap2": {
+      "name": "DESK",
+      "source": false,
+      "capacity": 1,
+      "completed": 9,
+      "remaining": 11,
+      "mean_number": 5.45,
+      "mean_queue": 4.5,
+      "utilization": 0.95,
+      "throughput": 0.45,
+      "mean_wait": 4.0,
+      "mean_response": 6.0
+    },
+    "simpy": {
+      "initial": 0,
+      "generated": 20,
+      "exited": 9,
+      "remaining": 11,
+      "stations": [
+        {
+          "mean_number": 5.45,
+          "mean_queue": 4.5,
+          "utilization": 0.95,
+          "throughput": 0.45,
+          "mean_wait": 4.0,
+          "mean_response": 6.0,
+          "completed": 9,
+          "remaining": 11
+        }
+      ]
+    },
+    "pass": true
+  },
+  {
+    "case": "dd2-full",
+    "qrunap2": {
+      "name": "DESK",
+      "source": false,
+      "capacity": 2,
+      "completed": 18,
+      "remaining": 2,
+      "mean_number": 1.85,
+      "mean_queue": 0.0,
+      "utilization": 0.925,
+      "throughput": 0.9,
+      "mean_wait": 0.0,
+      "mean_response": 2.0
+    },
+    "simpy": {
+      "initial": 0,
+      "generated": 20,
+      "exited": 18,
+      "remaining": 2,
+      "stations": [
+        {
+          "mean_number": 1.85,
+          "mean_queue": 0.0,
+          "utilization": 0.925,
+          "throughput": 0.9,
+          "mean_wait": 0.0,
+          "mean_response": 2.0,
+          "completed": 18,
+          "remaining": 2
+        }
+      ]
+    },
+    "pass": true
+  },
+  {
+    "case": "dd2-overload",
+    "qrunap2": {
+      "name": "DESK",
+      "source": false,
+      "capacity": 2,
+      "completed": 12,
+      "remaining": 8,
+      "mean_number": 4.7,
+      "mean_queue": 2.85,
+      "utilization": 0.925,
+      "throughput": 0.6,
+      "mean_wait": 2.5,
+      "mean_response": 5.5
+    },
+    "simpy": {
+      "initial": 0,
+      "generated": 20,
+      "exited": 12,
+      "remaining": 8,
+      "stations": [
+        {
+          "mean_number": 4.7,
+          "mean_queue": 2.85,
+          "utilization": 0.925,
+          "throughput": 0.6,
+          "mean_wait": 2.5,
+          "mean_response": 5.5,
+          "completed": 12,
+          "remaining": 8
+        }
+      ]
+    },
+    "pass": true
+  },
+  {
+    "case": "dd3",
+    "qrunap2": {
+      "name": "DESK",
+      "source": false,
+      "capacity": 3,
+      "completed": 18,
+      "remaining": 2,
+      "mean_number": 1.85,
+      "mean_queue": 0.0,
+      "utilization": 0.6166666666666667,
+      "throughput": 0.9,
+      "mean_wait": 0.0,
+      "mean_response": 2.0
+    },
+    "simpy": {
+      "initial": 0,
+      "generated": 20,
+      "exited": 18,
+      "remaining": 2,
+      "stations": [
+        {
+          "mean_number": 1.85,
+          "mean_queue": 0.0,
+          "utilization": 0.6166666666666667,
+          "throughput": 0.9,
+          "mean_wait": 0.0,
+          "mean_response": 2.0,
+          "completed": 18,
+          "remaining": 2
+        }
+      ]
+    },
+    "pass": true
+  },
+  {
+    "case": "dd1-before-arrival",
+    "qrunap2": {
+      "name": "DESK",
+      "source": false,
+      "capacity": 1,
+      "completed": 0,
+      "remaining": 0,
+      "mean_number": 0.0,
+      "mean_queue": 0.0,
+      "utilization": 0.0,
+      "throughput": 0.0,
+      "mean_wait": null,
+      "mean_response": null
+    },
+    "simpy": {
+      "initial": 0,
+      "generated": 0,
+      "exited": 0,
+      "remaining": 0,
+      "stations": [
+        {
+          "mean_number": 0.0,
+          "mean_queue": 0.0,
+          "utilization": 0.0,
+          "throughput": 0.0,
+          "mean_wait": null,
+          "mean_response": null,
+          "completed": 0,
+          "remaining": 0
+        }
+      ]
+    },
+    "pass": true
+  },
+  {
+    "case": "dd1-at-completion",
+    "qrunap2": {
+      "name": "DESK",
+      "source": false,
+      "capacity": 1,
+      "completed": 1,
+      "remaining": 0,
+      "mean_number": 0.3333333333333333,
+      "mean_queue": 0.0,
+      "utilization": 0.3333333333333333,
+      "throughput": 0.3333333333333333,
+      "mean_wait": 0.0,
+      "mean_response": 1.0
+    },
+    "simpy": {
+      "initial": 0,
+      "generated": 1,
+      "exited": 1,
+      "remaining": 0,
+      "stations": [
+        {
+          "mean_number": 0.3333333333333333,
+          "mean_queue": 0.0,
+          "utilization": 0.3333333333333333,
+          "throughput": 0.3333333333333333,
+          "mean_wait": 0.0,
+          "mean_response": 1.0,
+          "completed": 1,
+          "remaining": 0
+        }
+      ]
+    },
+    "pass": true
+  }
+]

@@ -52,7 +52,7 @@ fn closed_population_stays_constant() {
     assert!((r.stations.iter().map(|s| s.mean_number).sum::<f64>() - 40.0).abs() < 1e-9);
 }
 #[test]
-fn mm1_independent_replications_against_theory() {
+fn mm1_seeded_runs_against_theory() {
     let s = BASIC.replace("10000", "200000");
     let mut l = 0.0;
     let mut w = 0.0;

@@ -26,6 +26,14 @@ jobs:
         run: |
           cargo fmt --check
           cargo test --locked
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify exact cases with SimPy
+        run: |
+          cargo build --release --locked
+          python -m pip install -r verification/sne-2026/requirements.txt
+          python verification/sne-2026/reference_simpy.py --deterministic-only
       - name: Build static site and check shared runtime
         run: |
           python3 scripts/build.py

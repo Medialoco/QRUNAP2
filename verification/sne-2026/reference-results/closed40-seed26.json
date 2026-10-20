@@ -1,0 +1,28 @@
+{
+  "initial": 40,
+  "generated": 0,
+  "exited": 0,
+  "remaining": 40,
+  "stations": [
+    {
+      "mean_number": 19.880403766247223,
+      "mean_queue": 18.905059017309526,
+      "utilization": 0.9753447489376968,
+      "throughput": 0.97726,
+      "mean_wait": 19.34443166011394,
+      "mean_response": 20.342469549072938,
+      "completed": 195452,
+      "remaining": 12
+    },
+    {
+      "mean_number": 20.119596233752727,
+      "mean_queue": 19.143758629728833,
+      "utilization": 0.9758376040238957,
+      "throughput": 0.97712,
+      "mean_wait": 19.589832545580137,
+      "mean_response": 20.588520113218483,
+      "completed": 195424,
+      "remaining": 28
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+[
+  {
+    "model": "mm1-0.25",
+    "n": 32,
+    "reference": {
+      "mean_number": 0.3333333333333333,
+      "mean_queue": 0.08333333333333333,
+      "utilization": 0.25,
+      "throughput": 0.25,
+      "mean_response": 1.3333333333333333
+    },
+    "mean": {
+      "mean_number": 0.3322178302867362,
+      "mean_queue": 0.08260885287206789,
+      "utilization": 0.24960897741466828,
+      "throughput": 0.24992109375,
+      "mean_response": 1.3292872055371443
+    },
+    "sd": {
+      "mean_number": 0.003149706013052817,
+      "mean_queue": 0.001885465513631854,
+      "utilization": 0.0014994165841702239,
+      "throughput": 0.0011996496359320652,
+      "mean_response": 0.011295238613772351
+    }
+  },
+  {
+    "model": "mm1-0.5",
+    "n": 32,
+    "reference": {
+      "mean_number": 1.0,
+      "mean_queue": 0.5,
+      "utilization": 0.5,
+      "throughput": 0.5,
+      "mean_response": 2.0
+    },
+    "mean": {
+      "mean_number": 1.0001842045100993,
+      "mean_queue": 0.5003801074339654,
+      "utilization": 0.4998040970761336,
+      "throughput": 0.499943125,
+      "mean_response": 2.0005476053087183
+    },
+    "sd": {
+      "mean_number": 0.010426419999695949,
+      "mean_queue": 0.008968430205196833,
+      "utilization": 0.0020239504908121284,
+      "throughput": 0.0015083454671881694,
+      "mean_response": 0.018770668726059578
+    }
+  },
+  {
+    "model": "mm1-0.8",
+    "n": 32,
+    "reference": {
+      "mean_number": 4.000000000000002,
+      "mean_queue": 3.2000000000000015,
+      "utilization": 0.8,
+      "throughput": 0.8,
+      "mean_response": 5.000000000000002
+    },
+    "mean": {
+      "mean_number": 3.9959961269478517,
+      "mean_queue": 3.1959378476373757,
+      "utilization": 0.8000582793104725,
+      "throughput": 0.7999784375,
+      "mean_response": 4.99499860594841
+    },
+    "sd": {
+      "mean_number": 0.08694458178533644,
+      "mean_queue": 0.0853635242491259,
+      "utilization": 0.0023027516842112107,
+      "throughput": 0.0016919107529558821,
+      "mean_response": 0.1073563301000057
+    }
+  },
+  {
+    "model": "mm1-0.95",
+    "n": 32,
+    "reference": {
+      "mean_number": 18.999999999999982,
+      "mean_queue": 18.049999999999983,
+      "utilization": 0.95,
+      "throughput": 0.95,
+      "mean_response": 19.999999999999982
+    },
+    "mean": {
+      "mean_number": 19.553177698564173,
+      "mean_queue": 18.602084620901657,
+      "utilization": 0.9510930776626255,
+      "throughput": 0.95041625,
+      "mean_response": 20.568340383711764
+    },
+    "sd": {
+      "mean_number": 1.6064298970144915,
+      "mean_queue": 1.6037706171436992,
+      "utilization": 0.003129748944294486,
+      "throughput": 0.0022603525274582886,
+      "mean_response": 1.6681089067852395
+    }
+  },
+  {
+    "model": "mm2",
+    "n": 32,
+    "reference": {
+      "mean_number": 2.3999999999999995,
+      "mean_queue": 1.0666666666666664,
+      "utilization": 0.6666666666666666,
+      "throughput": 1.3333333333333333,
+      "mean_response": 1.7999999999999998
+    },
+    "mean": {
+      "mean_number": 2.3980777795163957,
+      "mean_queue": 1.0650777862933363,
+      "utilization": 0.666499996611529,
+      "throughput": 1.33310765625,
+      "mean_response": 1.7988387111553854
+    },
+    "sd": {
+      "mean_number": 0.02251674484609096,
+      "mean_queue": 0.020381215316986393,
+      "utilization": 0.0015426136480263834,
+      "throughput": 0.002466639016823197,
+      "mean_response": 0.01523149252173574
+    }
+  },
+  {
+    "model": "closed40",
+    "n": 32,
+    "reference": {
+      "mean_number": 20.0,
+      "mean_queue": 19.024390243902438,
+      "utilization": 0.975609756097561,
+      "throughput": 0.975609756097561,
+      "mean_response": 20.5
+    },
+    "mean": {
+      "mean_number": 20.06419967385322,
+      "mean_queue": 19.08839397450906,
+      "utilization": 0.9758056993440296,
+      "throughput": 0.9756196875,
+      "mean_response": 20.564086246627014
+    },
+    "sd": {
+      "mean_number": 0.4793896656684056,
+      "mean_queue": 0.4782873621888813,
+      "utilization": 0.0017565572425950514,
+      "throughput": 0.001878205190575089,
+      "mean_response": 0.4965050610851046
+    }
+  }
+]

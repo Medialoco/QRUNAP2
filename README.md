@@ -41,4 +41,10 @@ GitHub Actions builds, tests and deploys to Pages on pushes to main. Repository 
 
 ## Provenance and licensing
 
-QRUNAP2 is an independent implementation, not an official INRIA, Bull or Simulog release. Historical documents remain with their respective rights holders. The historical example is labelled as an adaptation. A license for the new code has not yet been selected; a public repository alone does not grant an open-source license.
+QRUNAP2 is an independent implementation, not an official INRIA, Bull or Simulog release. Historical documents remain with their respective rights holders. The historical example is labelled as an adaptation. The original QRUNAP2 code is available under the MIT License; this does not relicense historical source material.
+
+## License
+
+QRUNAP2 code, original examples, documentation and verification scripts are available under the [MIT License](LICENSE). Historical documents and third-party software retain their respective rights and licences; citing them does not relicense them.
+
+[Reproducible verification package](verification/sne-2026/README.md): analytical checks, eight exact SimPy comparisons, and 192 stochastic trajectories per engine.
