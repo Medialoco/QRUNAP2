@@ -48,7 +48,7 @@ for name,rate,cap in configs+[('closed40',0,1)]:
         summary['sd'][key]=statistics.stdev(s[key] for s in samples)
     summaries.append(summary)
 with (out/'measurements.csv').open('w') as f:
-    writer=csv.DictWriter(f,fieldnames=rows[0].keys());writer.writeheader();writer.writerows(rows)
+    writer=csv.DictWriter(f,fieldnames=rows[0].keys(),lineterminator="\n");writer.writeheader();writer.writerows(rows)
 (out/'summary.json').write_text(json.dumps(summaries,indent=2)+'\n')
 (out/'environment.json').write_text(json.dumps({'commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip(),'rustc':subprocess.check_output(['rustc','-Vv'],text=True),'platform':platform.platform(),'python':platform.python_version(),'horizon':200000,'seeds':list(range(1,33)),'warmup':0,'note':'Descriptive SD; distinct seeds do not establish independent random substreams.'},indent=2)+'\n')
 for s in summaries:
