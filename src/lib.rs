@@ -1,8 +1,48 @@
+//! A documented subset of QNAP2 for queueing network simulation.
+//!
+//! Parse and run a model with an explicit random seed:
+//!
+//! ```
+//! let source = r#"
+//! /DECLARE/
+//! QUEUE INPUT, DESK;
+//! /STATION/
+//! NAME=INPUT;
+//! TYPE=SOURCE;
+//! SERVICE=EXP(2);
+//! TRANSIT=DESK;
+//! /STATION/
+//! NAME=DESK;
+//! TYPE=SERVER,SINGLE;
+//! SERVICE=EXP(1);
+//! TRANSIT=OUT;
+//! /CONTROL/
+//! TMAX=10000;
+//! /EXEC/
+//! BEGIN
+//! SIMUL;
+//! END;
+//! /END/
+//! "#;
+//! let report = qrunap2::run(source, 42)?;
+//! assert_eq!(report.seed, 42);
+//! assert_eq!(report.stations.len(), 2);
+//! # Ok::<(), String>(())
+//! ```
+//!
+//! This crate implements a limited language subset, not full QNAP2 compatibility.
+//! See the [compatibility guide](https://github.com/Medialoco/QRUNAP2/blob/main/docs/compatibility.md)
+//! for supported constructs and limitations.
+
 mod engine;
 mod syntax;
-pub use engine::{simulate, Report};
+pub use engine::{simulate, Report, StationReport, Trace};
 pub use syntax::{parse, Distribution, Model, Station};
 
+/// Parse a QNAP2-subset model and simulate it using the supplied random seed.
+///
+/// Returns an error if the source is invalid, uses unsupported constructs,
+/// or simulation validation or resource limits fail.
 pub fn run(source: &str, seed: u32) -> Result<Report, String> {
     simulate(&parse(source)?, seed)
 }

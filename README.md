@@ -18,6 +18,38 @@ This is **v0.1, an educational subset**, not full QNAP2 9.3 compatibility. Histo
 
 ## Run locally
 
+### Install the command-line tool
+
+```sh
+cargo install qrunap2 --version 0.1.1 --locked
+qrunap2 --version
+qrunap2 check model.qnp
+qrunap2 run model.qnp 42
+```
+
+`model.qnp` is a local model file. Download a [complete M/M/1 example](https://raw.githubusercontent.com/Medialoco/QRUNAP2/main/examples/original/first-queue.qnp)
+or use the examples in this repository. `run` writes a JSON report; the seed defaults to `42` if omitted.
+
+### Use the Rust library
+
+```sh
+cargo add qrunap2
+```
+
+```rust,no_run
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let source = std::fs::read_to_string("model.qnp")?;
+    let report = qrunap2::run(&source, 42)?;
+    println!("Simulated {} events", report.events);
+    Ok(())
+}
+```
+
+The library exposes `parse`, `simulate` and `run`, together with model and report types.
+See the [API documentation](https://docs.rs/qrunap2).
+
+### Build from source
+
 ```sh
 cargo test --locked
 cargo run -- check examples/original/first-queue.qnp

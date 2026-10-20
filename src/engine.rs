@@ -3,6 +3,7 @@ use serde::Serialize;
 use std::cmp::Ordering;
 use std::collections::{BinaryHeap, VecDeque};
 
+/// Statistics for a source or service station over the simulation horizon.
 #[derive(Serialize, Debug, PartialEq)]
 pub struct StationReport {
     pub name: String,
@@ -17,6 +18,7 @@ pub struct StationReport {
     pub mean_wait: Option<f64>,
     pub mean_response: Option<f64>,
 }
+/// Simulation totals, per-station statistics and sampled population trace.
 #[derive(Serialize, Debug, PartialEq)]
 pub struct Report {
     pub version: &'static str,
@@ -30,6 +32,7 @@ pub struct Report {
     pub stations: Vec<StationReport>,
     pub trace: Vec<Trace>,
 }
+/// A sample of the network population at a simulation time.
 #[derive(Serialize, Debug, PartialEq)]
 pub struct Trace {
     pub time: f64,
@@ -131,6 +134,9 @@ impl Runtime<'_> {
         Ok(())
     }
 }
+/// Simulate a model with a reproducible seed, validating it before execution.
+///
+/// Returns an error for invalid models or when runtime resource limits are reached.
 pub fn simulate(model: &Model, seed: u32) -> Result<Report, String> {
     // The public Model API is intended for models returned by parse.
     if seed == 0 {
@@ -240,7 +246,7 @@ pub fn simulate(model: &Model, seed: u32) -> Result<Report, String> {
         });
     }
     Ok(Report {
-        version: "0.1.0",
+        version: env!("CARGO_PKG_VERSION"),
         seed,
         horizon: model.horizon,
         events,

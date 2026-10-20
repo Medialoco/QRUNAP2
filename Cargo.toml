@@ -1,9 +1,26 @@
 [package]
 name = "qrunap2"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
-description = "An evidence-led, educational subset of QNAP2 in Rust and WebAssembly"
+description = "A documented subset of QNAP2 for queueing network simulation"
+repository = "https://github.com/Medialoco/QRUNAP2"
+homepage = "https://medialoco.github.io/QRUNAP2/"
+documentation = "https://docs.rs/qrunap2"
+readme = "README.md"
+keywords = ["simulation", "queueing", "qnap2", "discrete-event", "wasm"]
+categories = ["simulation", "command-line-utilities"]
+include = [
+    "/src/**",
+    "/tests/**",
+    "/examples/**/*.qnp",
+    "/docs/*.md",
+    "/Cargo.toml",
+    "/Cargo.lock",
+    "/README.md",
+    "/LICENSE",
+    "/CHANGELOG.md",
+]
 
 [lib]
 crate-type = ["cdylib", "rlib"]

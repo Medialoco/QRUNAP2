@@ -1,10 +1,12 @@
 use std::collections::HashSet;
 
+/// A constant duration or an exponential duration parameterized by its mean.
 #[derive(Clone, Debug)]
 pub enum Distribution {
     Constant(f64),
     Exponential(f64),
 }
+/// A source or service station and its routing destination.
 #[derive(Clone, Debug)]
 pub struct Station {
     pub name: String,
@@ -14,6 +16,7 @@ pub struct Station {
     pub service: Distribution,
     pub destination: Option<usize>,
 }
+/// A validated network description and finite simulation horizon.
 #[derive(Clone, Debug)]
 pub struct Model {
     pub stations: Vec<Station>,
@@ -150,6 +153,9 @@ fn lex(source: &str) -> Result<Vec<Token>, String> {
     });
     Ok(tokens)
 }
+/// Parse and validate the supported QNAP2 subset.
+///
+/// Returns an error for malformed input, unsupported constructs or invalid models.
 pub fn parse(source: &str) -> Result<Model, String> {
     let mut p = Parser {
         tokens: lex(source)?,
